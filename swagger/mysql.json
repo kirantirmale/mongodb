@@ -1,0 +1,681 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "mysql collection",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/book/getdata": {
+      "get": {
+        "tags": [
+          "book"
+        ],
+        "summary": "getdata",
+        "operationId": "getdata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/book/adddata": {
+      "post": {
+        "tags": [
+          "book"
+        ],
+        "summary": "adddata",
+        "operationId": "adddata",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/adddatarequest"
+                  },
+                  {
+                    "example": {
+                      "name": "darshan",
+                      "price": 22
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "darshan",
+                "price": 22
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/book/getonedata": {
+      "post": {
+        "tags": [
+          "book"
+        ],
+        "summary": "getonedata",
+        "operationId": "getonedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/book/updatedata": {
+      "post": {
+        "tags": [
+          "book"
+        ],
+        "summary": "updatedata",
+        "operationId": "updatedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/updatedatarequest"
+                  },
+                  {
+                    "example": {
+                      "name": "KITTU"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "KITTU"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/book/deletedata": {
+      "delete": {
+        "tags": [
+          "book"
+        ],
+        "summary": "deletedata",
+        "operationId": "deletedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 4
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/students/getdata": {
+      "get": {
+        "tags": [
+          "students"
+        ],
+        "summary": "getdata",
+        "operationId": "Getgetdata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/students/adddata": {
+      "post": {
+        "tags": [
+          "students"
+        ],
+        "summary": "adddata",
+        "operationId": "Postadddata",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/adddatarequest1"
+                  },
+                  {
+                    "example": {
+                      "FirstName": "urmila",
+                      "LastName": "Tirmale",
+                      "RollNo": 13
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "FirstName": "urmila",
+                "LastName": "Tirmale",
+                "RollNo": 13
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/students/getonedata": {
+      "post": {
+        "tags": [
+          "students"
+        ],
+        "summary": "getonedata",
+        "operationId": "Postgetonedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/students/updatedata": {
+      "post": {
+        "tags": [
+          "students"
+        ],
+        "summary": "updatedadta",
+        "operationId": "updatedadta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/updatedadtarequest"
+                  },
+                  {
+                    "example": {
+                      "RollNo": 12
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "RollNo": 12
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/students/deletedata": {
+      "delete": {
+        "tags": [
+          "students"
+        ],
+        "summary": "deletedata",
+        "operationId": "Deletedeletedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 4
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/getdata": {
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "getdata",
+        "operationId": "Getgetdata1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/adddata": {
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "adddata",
+        "operationId": "Postadddata1",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/adddatarequest2"
+                  },
+                  {
+                    "example": {
+                      "ProductName": "apple",
+                      "Price": 64000,
+                      "Quntity": 1
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "ProductName": "apple",
+                "Price": 64000,
+                "Quntity": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/getonedata": {
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "getonedata",
+        "operationId": "Postgetonedata1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/updatedata": {
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "updatedata",
+        "operationId": "Postupdatedata",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/updatedatarequest1"
+                  },
+                  {
+                    "example": {
+                      "Price": 3800
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "Price": 3800
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/products/deletedata": {
+      "delete": {
+        "tags": [
+          "products"
+        ],
+        "summary": "deletedata",
+        "operationId": "Deletedeletedata1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 6
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "adddatarequest": {
+        "title": "adddatarequest",
+        "required": [
+          "name",
+          "price"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "name": "darshan",
+          "price": 22
+        }
+      },
+      "updatedatarequest": {
+        "title": "updatedatarequest",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "name": "KITTU"
+        }
+      },
+      "adddatarequest1": {
+        "title": "adddatarequest1",
+        "required": [
+          "FirstName",
+          "LastName",
+          "RollNo"
+        ],
+        "type": "object",
+        "properties": {
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "RollNo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "FirstName": "urmila",
+          "LastName": "Tirmale",
+          "RollNo": 13
+        }
+      },
+      "updatedadtarequest": {
+        "title": "updatedadtarequest",
+        "required": [
+          "RollNo"
+        ],
+        "type": "object",
+        "properties": {
+          "RollNo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "RollNo": 12
+        }
+      },
+      "adddatarequest2": {
+        "title": "adddatarequest2",
+        "required": [
+          "ProductName",
+          "Price",
+          "Quntity"
+        ],
+        "type": "object",
+        "properties": {
+          "ProductName": {
+            "type": "string"
+          },
+          "Price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Quntity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "ProductName": "apple",
+          "Price": 64000,
+          "Quntity": 1
+        }
+      },
+      "updatedatarequest1": {
+        "title": "updatedatarequest1",
+        "required": [
+          "Price"
+        ],
+        "type": "object",
+        "properties": {
+          "Price": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "Price": 3800
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "book"
+    },
+    {
+      "name": "students"
+    },
+    {
+      "name": "products"
+    }
+  ]
+}
